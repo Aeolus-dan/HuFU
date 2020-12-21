@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f5f7"
+    android:orientation="vertical"
+    tools:context=".fragment.TotalBillInfoFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="48dp">
+
+        <com.hufuinfo.hufudigitalgoldenchain.widget.SoftRadioGroup
+            android:id="@+id/total_bill_srg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.hufuinfo.hufudigitalgoldenchain.widget.SoftRadioButton
+                android:id="@+id/trade_amount_srb"
+                style="@style/softRadioButton_style"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="48dp"
+                android:layout_marginRight="48dp"
+                android:layout_weight="1"
+                app:text="交易额" />
+
+            <com.hufuinfo.hufudigitalgoldenchain.widget.SoftRadioButton
+                android:id="@+id/trade_time_srb"
+                style="@style/softRadioButton_style"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_weight="1"
+                app:text="时间" />
+        </com.hufuinfo.hufudigitalgoldenchain.widget.SoftRadioGroup>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="原金额"
+            android:textColor="#808892"
+            android:textSize="14sp" />
+
+
+    </FrameLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/total_bill_info_srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/total_bill_info_rv"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:context=".fragment.HomePageFragment">
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/wb_home"
+        />
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="168dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="16dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="项目介绍："
+                android:textColor="@color/red"
+                android:visibility="gone"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <include layout="@layout/layout_divided_line"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/golden_angel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="邀约黄金天使"
+            android:visibility="gone"
+            android:textSize="18sp" />
+
+        <include layout="@layout/layout_divided_line"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/income_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="收益一览"
+            android:visibility="gone"
+            android:textSize="18sp" />
+
+        <include layout="@layout/layout_divided_line"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/project_background_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="项目背景"
+            android:textSize="18sp"
+            android:visibility="gone"
+            />
+
+        <include layout="@layout/layout_divided_line" android:visibility="gone"/>
+
+
+        <TextView
+            android:id="@+id/partner_equity_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="合伙人权益"
+            android:visibility="gone"
+            android:textSize="18sp" />
+
+        <include layout="@layout/layout_divided_line" android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/partner_stock_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="合伙人股权权益"
+            android:visibility="gone"
+            android:textSize="18sp" />
+
+        <include layout="@layout/layout_divided_line" android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/gold_coin_advantage_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="黄金币的9大优势"
+            android:visibility="gone"
+            android:textSize="18sp" />
+
+        <include layout="@layout/layout_divided_line"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/cpk_explain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="cpk的原理"
+            android:visibility="gone"
+            android:textSize="18sp" />
+
+        <include layout="@layout/layout_divided_line"
+            android:visibility="gone"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="16dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="新闻动态："
+                android:textColor="@color/red"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <include layout="@layout/layout_divided_line" />
+        <TextView
+            android:id="@+id/news_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="五星出东方利中国"
+            android:textSize="14sp" />
+        <include layout="@layout/layout_divided_line" />
+        <TextView
+            android:id="@+id/news_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="多数机构预测金价2020年有望走高 甚至突破千六"
+            android:textSize="14sp" />
+        <include layout="@layout/layout_divided_line" />
+        <TextView
+            android:id="@+id/news_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="点阵图和利率期货暗示2020年不会加息 助力金价大涨"
+            android:textSize="14sp" />
+        <include layout="@layout/layout_divided_line" />
+
+        <TextView
+            android:id="@+id/news_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="美数据不济拉低美元 国际金价涨势尚存"
+            android:textSize="14sp" />
+
+        <include layout="@layout/layout_divided_line" />
+
+        <TextView
+            android:id="@+id/news_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="区块链安全事件总结，全球损失超60亿美元"
+            android:textSize="14sp"
+            />
+
+        <include layout="@layout/layout_divided_line" />
+
+        <TextView
+            android:id="@+id/news_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="向来反对加密货币的美联储，缘何支持Libra币？"
+            android:textSize="14sp" />
+        <include layout="@layout/layout_divided_line" />
+        <TextView
+            android:id="@+id/news_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="中国DCEP试点在即，Libra监管放松"
+            android:textSize="14sp" />
+
+        <include layout="@layout/layout_divided_line" />
+
+        <TextView
+            android:id="@+id/news_11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="潘向东：黄金价格怎么走？"
+            android:textSize="14sp" />
+
+        <include layout="@layout/layout_divided_line" />
+
+        <TextView
+            android:id="@+id/news_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="一文读懂稳定币"
+            android:textSize="14sp" />
+
+        <include layout="@layout/layout_divided_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="16dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="相关说明："
+                android:textColor="@color/red"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/network_tradin_center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="金本币网络交易中心"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/network_trading_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="查看详情"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/help" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="帮助/解释"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/help_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="查看详情"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>-->
+
+</android.support.v4.widget.NestedScrollView>

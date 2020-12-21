@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"
+
+    ?>
+<resources>
+    <declare-styleable name="SoftRadioButton">
+        <attr name="text" format="string" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColorChecked" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="upImage" format="reference" />
+        <attr name="downImage" format="reference" />
+        <attr name="upImageChecked" format="reference" />
+        <attr name="downImageChecked" format="reference" />
+    </declare-styleable>
+</resources>

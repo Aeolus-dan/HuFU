@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_permission_pass">"Camera" permission request allow</string>
+    <string name="camera_permission_denied">"Camera" right request not allowed</string>
+    <string name="light_on_string">On Light</string>
+    <string name="qrcode_album_string">Album</string>
+    <string name="scan_code_fail_string">Scan failed!</string>
+    <string name="flash_on">flash light on</string>
+    <string name="flash_off">flash light off</string>
+    <string name="scan_code_choose_image_string">choose image</string>
+    <string name="scanning_code_string">Scanning</string>
+    <string name="scan_code_fail">Scan failed, please select again</string>
+    <string name="no_storage_permission">No read storage permissions</string>
+    <string name="no_camera_permission">No Camera Permission</string>
+    <string name="title_scan_camera">Please scan the QR code</string>
+</resources>

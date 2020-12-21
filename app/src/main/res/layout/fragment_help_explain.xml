@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HelpExplainFragment">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="帮助/解释"
+            android:textStyle="bold"
+            android:textColor="#ff000000"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/help_explain_return_tv"
+            android:layout_width="103dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:text="返回"
+            android:textColor="#ff007aff"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@mipmap/icon_return" />
+    </FrameLayout>
+
+
+    <WebView
+        android:id="@+id/help_explain_wb"
+        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </WebView>
+
+</FrameLayout>

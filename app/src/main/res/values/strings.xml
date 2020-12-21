@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">hufudigitalgoldenchain</string>
+    <string name="send_verif">Send verification code</string>
+    <string name="input_verifi">Input validation code</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="action_sign_in">Login</string>
+    <string name="title_activity_register">Register</string>
+    <string name="net_error">network error!</string>
+    <string name="user_register">User Register</string>
+    <string name="invitation">Invitation code registration</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_recharge">Recharge</string>
+    <string name="action_cashes">Cashes</string>
+    <string name="complete_time">complete Time</string>
+
+    <string name="buyer_string">Buyer</string>
+    <string name="rationale_location_contacts">Allows an app to access approximate location.</string>
+
+    <string-array name="array_transaction_type">
+        <item>All</item>　　　　　　
+        <item>Buy</item>　　　　　　
+        <item>Sell</item>
+    </string-array>
+
+    <string name="title_activity_payment">PaymentActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="account_num">Account</string>
+    <string name="own_team_member">Having team members (including captains)</string>
+    <string name="team_benefi_total">Total Benefit of the Team (Unit)</string>
+    <string name="hint_put_number">Up to two decimal places</string>
+
+
+    <string name="empty_network_error">Network error, Click Retry</string>
+    <string name="empty_no_data">There is no data, Click Retry</string>
+
+    <string name="platform_trade_str"><b>Platform Trade</b></string>
+    <string name="personal_trade_str"><b>Personal Trade</b></string>
+
+</resources>

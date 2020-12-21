@@ -1,0 +1,123 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        release {
+            keyPassword 'hufudigital2018'
+            storeFile file('/Users/pg/Downloads/HuFuDigitalGoldenChain/app/src/hufuDigitalGoldenSign.jks')
+            storePassword 'hufu20181030'
+            keyAlias 'hufudigitalgoldechain'
+        }
+    }
+    compileSdkVersion 28
+    def currentVersionCode = getVersionCode()
+    def currentVersionName = getVersionName()
+
+    defaultConfig {
+        applicationId "com.hufuinfo.hufudigitalgoldenchain"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode currentVersionCode
+        versionName currentVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        dexInProcess true
+        maxProcessCount 8
+        javaMaxHeapSize "2g"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                outputFileName = "HUFUDigitalGoldenChain" + defaultConfig.versionCode + "-v" + defaultConfig.versionName + "-" + buildType.name + ".apk"
+            }
+    }
+/*
+    splits{
+        abi{
+            enable true
+            reset()
+            include 'armeabi-v7a', 'armeabi'
+            universalApk true
+        }
+    }
+*/
+}
+
+def getVersionCode() {
+    def versionFile = file('version.properties')
+    if (versionFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+
+        def versionCode = versionProps['VERSION_CODE'].toInteger()
+        def runTasks = gradle.startParameter.taskNames
+
+        if (':app:assembleRelease' in runTasks) {
+            versionProps['VERSION_CODE'] = (++versionCode).toString()
+            versionProps.store(versionFile.newWriter(), null)
+        }
+        return versionCode
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+def getVersionName() {
+    def versionName
+    def versionFile = file('version.properties')
+    if (versionFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+
+        def versionCode = versionProps['VERSION_CODE'].toInteger()
+        versionName = versionProps['VERSION_NAME']
+
+        return "$versionName.$versionCode"
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'pub.devrel:easypermissions:2.0.0'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.1.6'
+    implementation 'com.google.zxing:core:3.3.0'
+    //图片轮询库
+    implementation 'com.youth.banner:banner:1.4.10'
+    //图片加载库
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+    testImplementation 'junit:junit:4.12'
+    implementation project(':UpdateAppUtils')
+}

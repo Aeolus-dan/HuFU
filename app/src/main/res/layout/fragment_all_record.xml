@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="总账单"
+            android:textColor="#ff000000"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/all_record_return_tv"
+            android:layout_width="103dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:gravity="center_vertical"
+            android:text="返回"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="#ff007aff"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@mipmap/icon_return" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividerColor" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/all_record_tabl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:tabIndicatorColor="@color/tab_item_selected"
+        app:tabIndicatorFullWidth="true"
+        app:tabSelectedTextColor="#007AFF"
+        app:tabTextColor="#808892">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="56dp"
+            android:layout_height="20dp"
+            android:text="全部账单"
+            android:textSize="14sp" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="56dp"
+            android:layout_height="20dp"
+            android:text="金本币账单"
+            android:textSize="14sp" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="56dp"
+            android:layout_height="20dp"
+            android:text="积分账单"
+            android:textSize="14sp" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="56dp"
+            android:layout_height="20dp"
+            android:text="信用账单"
+            android:textSize="14sp" />
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/all_record_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

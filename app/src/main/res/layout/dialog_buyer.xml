@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/put_forward_background"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="购买金本币"
+            android:textColor="#ff5e5e5e"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/dialog_close_btn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="#ffffff"
+            android:src="@mipmap/close_icon" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:layout_width="84dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:text="请选择购买数量"
+        android:textColor="#ff979797"
+        android:textSize="12sp" />
+
+
+    <RadioGroup
+        android:id="@+id/buyer_rg"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/one_rb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/radio_select"
+            android:button="@null"
+            android:gravity="center"
+            android:text="1个" />
+
+        <RadioButton
+            android:id="@+id/five_rb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/radio_select"
+            android:button="@null"
+            android:gravity="center"
+            android:text="5个" />
+
+        <RadioButton
+            android:id="@+id/ten_rb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/radio_select"
+            android:button="@null"
+            android:gravity="center"
+            android:text="10个" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/buyer_rg2"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tw_rb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/radio_select"
+            android:button="@null"
+            android:gravity="center"
+            android:text="20个" />
+
+        <RadioButton
+            android:id="@+id/fth_rb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/radio_select"
+            android:button="@null"
+            android:gravity="center"
+            android:text="50个" />
+
+        <RadioButton
+            android:id="@+id/one_hundred_rb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/radio_select"
+            android:button="@null"
+            android:gravity="center"
+            android:text="100个" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="72dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="12dp"
+        android:text="输入购买数量"
+        android:textColor="#ff8e9295"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/buyer_num_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="@string/hint_put_number"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/buyer_num_price_tv"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/dialog_buyer_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/login_shape"
+        android:text="@string/buyer_string" />
+
+</LinearLayout>
+

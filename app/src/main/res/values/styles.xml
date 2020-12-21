@@ -1,0 +1,79 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="FragmentDialog" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:radius">7dp</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="IssueTradeFragmentDialog" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="softRadioButton_style">
+        <item name="textSize">15sp</item>
+        <item name="textColorChecked">#ff3e82fe</item>
+        <item name="textColor">#ff808892</item>
+        <item name="upImage">@drawable/ic_sort_up</item>
+        <item name="downImage">@drawable/ic_sort_down</item>
+        <item name="upImageChecked">@drawable/ic_sort_up_selected</item>
+        <item name="downImageChecked">@drawable/ic_sort_down_selected</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+
+    <style name="bg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/bg</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="empty_img">
+        <item name="android:layout_width">@dimen/def_height</item>
+        <item name="android:layout_height">@dimen/def_height</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+
+    <style name="hufu_checkBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/check_box_drawable</item>
+    </style>
+
+    <style name="hufu_tabLayoutTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="hufu_editTextTheme" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">#EDEDED</item>
+        <item name="colorControlActivated">#3E82FE</item>
+        <item name="colorAccent">#7B7B7B</item>
+    </style>
+</resources>

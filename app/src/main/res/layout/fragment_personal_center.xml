@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:background="@mipmap/users_title_mask">
+
+            <TextView
+                android:id="@+id/center_user_name_tv"
+                android:layout_width="72dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:textColor="#fffcfdfd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/title_setting_iv"
+                app:layout_constraintHorizontal_bias="0.039"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="误先生" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginLeft="64dp"
+                android:text="金本币余额(gG)"
+                android:textColor="#fffcfdfd"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/user_account_balance_tv"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.085"
+                app:layout_constraintStart_toStartOf="@+id/user_account_balance_tv" />
+
+            <ImageButton
+                android:id="@+id/title_setting_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@mipmap/icon_item_setting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_account_balance_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="96dp"
+                android:layout_marginStart="96dp"
+                android:layout_marginLeft="96dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="128dp"
+                android:layout_marginRight="128dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#fffcfdfd"
+                android:textSize="64sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.264"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="455.02" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:layout_marginBottom="24dp"
+                android:text="金本币"
+                android:textColor="#fffcfdfd"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/user_account_balance_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/user_account_balance_tv"
+                app:layout_constraintTop_toTopOf="@+id/user_account_balance_tv"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="积分余额(分)"
+                android:textColor="#fffcfdfd"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@+id/personal_account_integral_tv"
+                app:layout_constraintStart_toStartOf="@+id/personal_account_integral_tv"
+                app:layout_constraintTop_toBottomOf="@+id/user_account_balance_tv" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:gravity="center"
+                android:text="信用余额(gG)"
+                android:textColor="#fffcfdfd"
+                android:textSize="13sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
+                app:layout_constraintEnd_toStartOf="@+id/textView20"
+                app:layout_constraintStart_toEndOf="@+id/textView14" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="奖励余额(gG)"
+                android:textColor="#fffcfdfd"
+                android:textSize="13sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
+                app:layout_constraintEnd_toEndOf="@+id/personal_reward_tv"
+                app:layout_constraintHorizontal_bias="0.525"
+                app:layout_constraintStart_toEndOf="@+id/textView16"
+                app:layout_constraintStart_toStartOf="@+id/personal_reward_tv" />
+
+            <TextView
+                android:id="@+id/personal_line_credit_tv"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:gravity="center_horizontal"
+                android:textColor="#fffcfdfd"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/personal_account_integral_tv"
+                app:layout_constraintEnd_toStartOf="@+id/personal_reward_tv"
+                app:layout_constraintStart_toEndOf="@+id/personal_account_integral_tv"
+                app:layout_constraintTop_toTopOf="@+id/personal_account_integral_tv"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/personal_reward_tv"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_horizontal"
+                android:textColor="#fffcfdfd"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/personal_line_credit_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintStart_toEndOf="@+id/personal_line_credit_tv"
+                app:layout_constraintTop_toTopOf="@+id/personal_line_credit_tv" />
+
+            <TextView
+                android:id="@+id/personal_account_integral_tv"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal"
+                android:textColor="#fffcfdfd"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/personal_line_credit_tv"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14"
+                app:layout_constraintVertical_bias="0.6" />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/gold_change_ll"
+                app:layout_constraintStart_toEndOf="@+id/gold_change_ll">
+
+                <!-- <TextView
+                     android:id="@+id/recharge_ll"
+                     android:layout_width="64dp"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentStart="true"
+                     android:layout_alignParentLeft="true"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="24dp"
+                     android:layout_marginLeft="24dp"
+                     android:layout_marginTop="16dp"
+                     android:layout_marginBottom="8dp"
+                     android:clickable="true"
+                     android:drawableTop="@mipmap/recharge_icon"
+                     android:focusable="true"
+                     android:gravity="center"
+                     android:orientation="vertical"
+                     android:text="充值"
+                     android:textColor="#ff354052"
+                     android:textSize="12sp"
+                     android:visibility="gone"
+                     app:layout_constraintBottom_toTopOf="@+id/recharge_record_ll"
+                     app:layout_constraintEnd_toStartOf="@+id/withdraw_ll"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent" />-->
+
+
+                <TextView
+                    android:id="@+id/withdraw_ll"
+                    android:layout_width="64dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="18dp"
+                    android:clickable="true"
+                    android:drawableTop="@mipmap/withdraw_icon"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="提现"
+                    android:textColor="#ff354052"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/gold_change_ll"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/gold_change_ll"
+                    android:layout_width="64dp"
+                    android:layout_height="52dp"
+                    android:layout_alignStart="@id/withdraw_ll"
+                    android:layout_alignLeft="@id/withdraw_ll"
+                    android:clickable="true"
+                    android:drawableTop="@mipmap/gold_change_icon"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="转金本币"
+                    android:textColor="#ff354052"
+                    android:textSize="12sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/withdraw_ll"
+                    app:layout_constraintEnd_toStartOf="@+id/my_team_ll"
+                    app:layout_constraintStart_toEndOf="@+id/withdraw_ll" />
+
+
+                <TextView
+                    android:id="@+id/my_team_ll"
+                    android:layout_width="64dp"
+                    android:layout_height="52dp"
+                    android:layout_alignStart="@id/gold_change_ll"
+                    android:layout_alignLeft="@id/gold_change_ll"
+                    android:clickable="true"
+                    android:drawableTop="@mipmap/my_team_icon"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="我的团队"
+                    android:textColor="#ff354052"
+                    android:textSize="12sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/gold_change_ll"
+                    app:layout_constraintEnd_toStartOf="@+id/recharge_record_ll"
+                    app:layout_constraintStart_toEndOf="@+id/gold_change_ll" />
+
+                <TextView
+                    android:id="@+id/recharge_record_ll"
+                    android:layout_width="64dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:drawableTop="@mipmap/recharge_record"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="充值记录"
+                    android:textColor="#ff354052"
+                    android:textSize="12sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/my_team_ll"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/my_team_ll" />
+
+                <TextView
+                    android:id="@+id/personal_order_ll"
+                    android:layout_width="64dp"
+                    android:layout_height="52dp"
+                    android:layout_below="@id/withdraw_ll"
+                    android:layout_alignStart="@id/recharge_record_ll"
+                    android:layout_alignLeft="@id/recharge_record_ll"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="24dp"
+                    android:clickable="true"
+                    android:drawableTop="@mipmap/person_order_icon"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="私人订单"
+                    android:textColor="#ff354052"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/withdraw_ll"
+                    app:layout_constraintTop_toBottomOf="@+id/withdraw_ll" />
+
+
+                <TextView
+                    android:id="@+id/platform_order_ll"
+                    android:layout_width="64dp"
+                    android:layout_height="52dp"
+                    android:layout_below="@id/gold_change_ll"
+                    android:layout_alignStart="@id/personal_order_ll"
+                    android:layout_alignLeft="@id/personal_order_ll"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:drawableTop="@mipmap/platform_order_icon"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="平台订单"
+                    android:textColor="#ff354052"
+                    android:textSize="13sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/personal_order_ll"
+                    app:layout_constraintStart_toStartOf="@+id/gold_change_ll" />
+
+                <TextView
+                    android:id="@+id/total_bill_ll"
+                    android:layout_width="64dp"
+                    android:layout_height="52dp"
+                    android:layout_below="@id/my_team_ll"
+                    android:layout_alignEnd="@id/platform_order_ll"
+                    android:layout_alignRight="@id/platform_order_ll"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:drawableTop="@mipmap/total_bill_icon"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="总账单"
+                    android:textColor="#ff354052"
+                    android:textSize="12sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/platform_order_ll"
+                    app:layout_constraintStart_toStartOf="@+id/my_team_ll" />
+
+                <TextView
+                    android:id="@+id/receiver_tv"
+                    android:layout_width="64dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:drawableTop="@mipmap/receiver_icon"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="收款码"
+                    android:textColor="#ff354052"
+                    android:textSize="12sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/total_bill_ll"
+                    app:layout_constraintStart_toStartOf="@+id/recharge_record_ll" />
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="#ffededed" />
+
+            <TextView
+                android:id="@+id/perfect_user_basic_tv"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:clickable="true"
+                android:drawableStart="@mipmap/icon_certificate"
+                android:drawableLeft="@mipmap/icon_certificate"
+                android:drawableEnd="@mipmap/list_item_indicator"
+                android:drawableRight="@mipmap/list_item_indicator"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="完善资料"
+                android:textColor="#ff4e5761"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffededed" />
+
+            <TextView
+                android:id="@+id/certificate_tv"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:clickable="true"
+                android:drawableStart="@mipmap/icon_certificate"
+                android:drawableLeft="@mipmap/icon_certificate"
+                android:drawableEnd="@mipmap/list_item_indicator"
+                android:drawableRight="@mipmap/list_item_indicator"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="获取证书"
+                android:textColor="#ff4e5761"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffededed" />
+
+            <TextView
+                android:id="@+id/friendship_sharing_tv"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:clickable="true"
+                android:drawableStart="@mipmap/icon_sharing"
+                android:drawableLeft="@mipmap/icon_sharing"
+                android:drawableEnd="@mipmap/list_item_indicator"
+                android:drawableRight="@mipmap/list_item_indicator"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="友情分享"
+                android:textColor="#ff4e5761"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffededed" />
+
+            <TextView
+                android:id="@+id/about_tv"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:clickable="true"
+                android:drawableStart="@mipmap/icon_about"
+                android:drawableLeft="@mipmap/icon_about"
+                android:drawableEnd="@mipmap/list_item_indicator"
+                android:drawableRight="@mipmap/list_item_indicator"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="关于"
+                android:textColor="#ff4e5761"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffededed" />
+
+            <TextView
+                android:id="@+id/setting_tv"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:clickable="true"
+                android:drawableStart="@mipmap/icon_item_setting"
+                android:drawableLeft="@mipmap/icon_item_setting"
+                android:drawableEnd="@mipmap/list_item_indicator"
+                android:drawableRight="@mipmap/list_item_indicator"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="设置"
+                android:textColor="#ff4e5761"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffededed" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

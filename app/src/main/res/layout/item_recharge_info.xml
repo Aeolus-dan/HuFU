@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <TextView
+        android:id="@+id/account_tv"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="18428385722"
+        android:textColor="#ff848c96"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/gold_cloud_tv"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="10.0"
+        android:textColor="#ff808892"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/recharge_mode_tv"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="充值余额账单"
+        android:textColor="#ff808892"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/recharge_time_tv"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="2019-01-09 10:55:15"
+        android:textColor="#ff808892"
+        android:textSize="12sp" />
+</LinearLayout>

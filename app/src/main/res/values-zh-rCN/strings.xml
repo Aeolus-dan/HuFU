@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="app_name">金网格</string>
+    <string name="send_verif">获取验证码</string>
+    <string name="input_verifi">验证码</string>
+    <string name="phone_number">手机号</string>
+    <string name="action_sign_in">登录</string>
+    <string name="title_activity_register">注册</string>
+    <string name="net_error">网络错误!</string>
+    <string name="user_register">注册</string>
+    <string name="invitation">邀请码</string>
+    <string name="action_settings">设置</string>
+    <string name="action_recharge">充值</string>
+    <string name="action_cashes">提现</string>
+
+    <string name="complete_time">完成时间</string>
+    <string name="buyer_string">购买</string>
+    <string name="rationale_location_contacts">允许应用程序访问近似位置。</string>
+    <string-array name="array_transaction_type">
+        <item>全部</item>　　　　　　
+        <item>买入</item>　　　　　　
+        <item>卖出</item>
+    </string-array>
+    <string name="title_activity_payment">支付界面</string>
+    <string name="account_num">账号</string>
+    <string name="own_team_member">拥有队员</string>
+    <string name="team_benefi_total">该队员总效益（股）</string>
+    <string name="hint_put_number">最多两位小数</string>
+    <string name="empty_network_error">网络错误，请单击“重试”</string>
+    <string name="empty_no_data">没有数据，请单击“重试”</string>
+    <string name="platform_trade_str"><b>平台交易</b></string>
+    <string name="personal_trade_str"><b>私人交易</b></string>
+</resources>

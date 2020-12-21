@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_permission_pass">“相机”权限请求允许</string>
+    <string name="camera_permission_denied">“相机”权请求未允许</string>
+    <string name="light_on_string">闪光</string>
+    <string name="qrcode_album_string">相册</string>
+    <string name="scan_code_fail_string">扫描失败!</string>
+    <string name="flash_on">开启闪光</string>
+    <string name="flash_off">关闭闪光</string>
+    <string name="scan_code_choose_image_string">选择二维码</string>
+    <string name="scanning_code_string">正在扫描！</string>
+    <string name="scan_code_fail">扫描失败!请重新选择二维码!</string>
+    <string name="no_storage_permission">存储权限未通过</string>
+    <string name="no_camera_permission">相机权限未通过</string>
+    <string name="title_scan_camera">请扫描二维码</string>
+</resources>

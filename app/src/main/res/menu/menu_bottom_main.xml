@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hufuinfo.hufudigitalgoldenchain.activity.MainActivity">
+    <item
+        android:id="@+id/home_page_menu"
+        android:icon="@drawable/ic_portrait_black_24dp"
+        android:title="首页" />
+    <item
+        android:id="@+id/trans_page_menu"
+        android:icon="@drawable/ic_portrait_black_24dp"
+        android:title="交易" />
+    <item
+        android:id="@+id/users_page_menu"
+        android:icon="@drawable/ic_portrait_black_24dp"
+        android:title="我的" />
+
+</menu>

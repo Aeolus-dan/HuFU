@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ProjectBackgroundFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="项目背景"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/background1"
+            android:visibility="visible" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="209dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/background2"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/project_background3_Iv"
+            android:layout_width="match_parent"
+            android:layout_height="192dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/background3"
+            android:visibility="visible" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="162dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/background4"
+            android:visibility="visible" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="154dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/background5"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:text="创始人背景"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="454dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/founder_background1" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="519dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/founder_background2" />
+
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

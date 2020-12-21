@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hufuinfo.hufudigitalgoldenchain.activity.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="关于"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_recharge"
+        android:orderInCategory="100"
+        android:title="@string/action_recharge"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_cashes"
+        android:orderInCategory="100"
+        android:title="@string/action_cashes"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_gold_switch"
+        android:orderInCategory="100"
+        android:title="转金本币"
+        android:visible="false"
+        app:showAsAction="never" />
+</menu>
