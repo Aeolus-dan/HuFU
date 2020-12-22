@@ -207,7 +207,6 @@ public class HomePageFragment extends Fragment {
         mWBHome.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                Log.e("HomePageFramgment","url:"+url); //
                 if(TextUtils.equals("http://www.gold2040.com/register.html",url) ||
                     TextUtils.equals("http://www.gold2040.com/",url)) {
                     mWBHome.stopLoading();
