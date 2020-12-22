@@ -10,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/wb_home"
-        android:visibility="gone"
+        android:visibility="visible"
         />
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/appbar_padding_top"
-        android:visibility="visible"
+        android:visibility="gone"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -54,6 +54,6 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 </android.support.design.widget.CoordinatorLayout>

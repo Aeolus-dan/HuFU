@@ -1,5 +1,6 @@
 package com.hufuinfo.hufudigitalgoldenchain.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -34,8 +35,8 @@ public class RegisterActivity extends BaseDispatchTouchActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       /* Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);*/
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -68,13 +69,16 @@ public class RegisterActivity extends BaseDispatchTouchActivity {
         mWBSetting.setLoadWithOverviewMode(true);
         mWBSetting.setDisplayZoomControls(false);
 
-/*        mWBHome.setWebChromeClient(new WebChromeClient());
-        mWBHome.loadUrl("http://47.94.231.98:8080/CMAServer/home/appHome.jsp");
+       mWBHome.setWebChromeClient(new WebChromeClient());
+        mWBHome.loadUrl("http://www.gold2040.com/register.html");
 
       mWBHome.setWebViewClient(new WebViewClient(){
           @Override
           public boolean shouldOverrideUrlLoading(WebView view, String url) {
-              mWBHome.loadUrl(url);
+              mWBHome.stopLoading();
+              Intent loginIntent = new Intent(RegisterActivity.this,LoginActivity.class);
+              startActivity(loginIntent);
+              finish();
               return true;
           }
 
@@ -85,7 +89,7 @@ public class RegisterActivity extends BaseDispatchTouchActivity {
               }
               return true;
           }
-      });*/
+      });
     }
 
 

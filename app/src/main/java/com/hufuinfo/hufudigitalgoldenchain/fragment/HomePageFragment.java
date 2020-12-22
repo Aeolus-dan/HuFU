@@ -4,6 +4,8 @@ package com.hufuinfo.hufudigitalgoldenchain.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -201,10 +203,17 @@ public class HomePageFragment extends Fragment {
         mWBSetting.setDisplayZoomControls(false);
 
         mWBHome.setWebChromeClient(new WebChromeClient());
-        mWBHome.loadUrl("http://47.94.231.98:8080/CMAServer/home/appHome.jsp");
+        mWBHome.loadUrl("http://www.gold2040.com/art/c/5.html");
         mWBHome.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                Log.e("HomePageFramgment","url:"+url); //
+                if(TextUtils.equals("http://www.gold2040.com/register.html",url) ||
+                    TextUtils.equals("http://www.gold2040.com/",url)) {
+                    mWBHome.stopLoading();
+                    return true;
+                }
+
                 mWBHome.loadUrl(url);
                 return true;
             }
@@ -216,6 +225,7 @@ public class HomePageFragment extends Fragment {
                 }
                 return true;
             }
+
         });
     }
 
