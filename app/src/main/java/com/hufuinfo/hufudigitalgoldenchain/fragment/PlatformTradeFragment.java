@@ -27,6 +27,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.hufuinfo.hufudigitalgoldenchain.R;
+import com.hufuinfo.hufudigitalgoldenchain.activity.MainActivity;
 import com.hufuinfo.hufudigitalgoldenchain.activity.PaymentActivity;
 import com.hufuinfo.hufudigitalgoldenchain.adapter.PlatformTradeFinishAdapter;
 import com.hufuinfo.hufudigitalgoldenchain.apiinterface.GoldenOrder;
@@ -369,7 +370,9 @@ public class PlatformTradeFragment extends Fragment implements BaseQuickAdapter.
                         observer.onNext(queryAllCertsResult.data.getList());
                     } else {
                         mHangingTradeSR.setRefreshing(false);
-                        Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        if (!MainActivity.isVisitor) {
+                            Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        }
                     }
                 }, error -> {
                     mHangingTradeSR.setRefreshing(false);

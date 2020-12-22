@@ -62,11 +62,18 @@ public class MainActivity extends BaseDispatchTouchActivity {
     private SharedPreferences mSharedPre;
     private String antiFake;
     private boolean isPartner = false;
+    public static boolean isVisitor = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null){
+            isVisitor = extras.getBoolean("visitor");
+        }
+
         mSharedPre = getSharedPreferences(ConstantUtils.USER_INFO_STORAGE, MODE_PRIVATE);
         antiFake = mSharedPre.getString(ConstantUtils.ANTI_FAKE, null);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -84,7 +91,11 @@ public class MainActivity extends BaseDispatchTouchActivity {
                         mViewPager.setCurrentItem(1);
                         break;
                     case R.id.users_page_menu:
-                        mViewPager.setCurrentItem(2);
+                        if (isVisitor){
+                            Toast.makeText(MainActivity.this,"您还未登录, 请先登录!",Toast.LENGTH_SHORT).show();
+                        }else {
+                            mViewPager.setCurrentItem(2);
+                        }
                         break;
                 }
                 return false;
@@ -168,7 +179,7 @@ public class MainActivity extends BaseDispatchTouchActivity {
         public Fragment getItem(int position) {
             if (position == 1) {
                 if (mTransactionFragment == null) {
-                    mTransactionFragment = new TransactionFragment();
+                    mTransactionFragment = new TransactionFragment(isVisitor);
                 }
                 return mTransactionFragment;
             } else if (position == 2) {

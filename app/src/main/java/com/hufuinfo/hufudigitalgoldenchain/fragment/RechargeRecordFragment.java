@@ -23,6 +23,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.hufuinfo.hufudigitalgoldenchain.R;
+import com.hufuinfo.hufudigitalgoldenchain.activity.MainActivity;
 import com.hufuinfo.hufudigitalgoldenchain.apiinterface.QueryUserInfo;
 import com.hufuinfo.hufudigitalgoldenchain.bean.HuFuCode;
 import com.hufuinfo.hufudigitalgoldenchain.bean.RechargeRecord;
@@ -164,7 +165,9 @@ public class RechargeRecordFragment extends Fragment implements BaseQuickAdapter
                     if (queryRechargeResult.success) {
                         observer.onNext(queryRechargeResult.data.getUserVoucherCenter());
                     } else {
-                        Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        if (!MainActivity.isVisitor) {
+                            Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        }
                     }
                 }, error -> {
                     Toast.makeText(getActivity(), R.string.net_error + error.getMessage(), Toast.LENGTH_LONG).show();

@@ -33,6 +33,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.hufuinfo.hufudigitalgoldenchain.R;
+import com.hufuinfo.hufudigitalgoldenchain.activity.MainActivity;
 import com.hufuinfo.hufudigitalgoldenchain.activity.PaymentActivity;
 import com.hufuinfo.hufudigitalgoldenchain.apiinterface.GoldenOrder;
 import com.hufuinfo.hufudigitalgoldenchain.apiinterface.QueryTransactionOrder;
@@ -404,7 +405,9 @@ public class PersonalTranInfoFragment extends Fragment {
                         showRecyclerView(queryAllCertsResult.data);
 
                     } else {
-                        Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        if (!MainActivity.isVisitor) {
+                            Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        }
                     }
                 }, error -> {
                     personalTrainSrl.setRefreshing(false);

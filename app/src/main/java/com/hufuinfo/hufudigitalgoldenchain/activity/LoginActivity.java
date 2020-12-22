@@ -64,6 +64,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
 
     private Button mLoginBtn, mRegisterBtn;
     private TextView mChangeLoginTypeTv;
+    private TextView mVisitorLogin;
     private CheckBox mRememberPwdCb;
 
     private View mProgressView;
@@ -104,10 +105,12 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
         mRegisterBtn = findViewById(R.id.registration_button);
         mRegisterBtn.setOnClickListener(this);
         mChangeLoginTypeTv = findViewById(R.id.change_login_type_button);
+        mVisitorLogin = findViewById(R.id.visitor_login);
         SpannableString spannableString = new SpannableString("忘记密码？动态登录");
         spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorLoginText)), 5, 9, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         mChangeLoginTypeTv.setText(spannableString);
         mChangeLoginTypeTv.setOnClickListener(this);
+        mVisitorLogin.setOnClickListener(this);
         mRememberPwdCb = findViewById(R.id.remember_pwd_cb);
         boolean isRemember = mUserSharedPre.getBoolean(ConstantUtils.REMEMBER_PWD, false);
         mRememberPwdCb.setChecked(isRemember);
@@ -188,6 +191,12 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                     mLoginVerificationFragment.setPhoneNumberEdit(userAccount);
                 }
                 break;
+            case R.id.visitor_login: //visitor login
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                intent.putExtra("visitor",true);
+                startActivity(intent);
+                finish();
+                break;
             default:
                 break;
         }
@@ -199,6 +208,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
         mLoginBtn.setEnabled(isClick);
         mRegisterBtn.setEnabled(isClick);
         mChangeLoginTypeTv.setEnabled(isClick);
+        mVisitorLogin.setEnabled(isClick);
     }
 
     @Override

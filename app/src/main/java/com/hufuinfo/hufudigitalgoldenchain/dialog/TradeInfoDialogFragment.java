@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.hufuinfo.hufudigitalgoldenchain.R;
+import com.hufuinfo.hufudigitalgoldenchain.activity.MainActivity;
 import com.hufuinfo.hufudigitalgoldenchain.apiinterface.QueryTransactionOrder;
 import com.hufuinfo.hufudigitalgoldenchain.bean.HuFuCode;
 import com.hufuinfo.hufudigitalgoldenchain.bean.RevokeOrderQuest;
@@ -257,7 +258,9 @@ public class TradeInfoDialogFragment extends DialogFragment {
                         showTradeInfoData(transactionOrderInfo);
                         againInfoBtn.setVisibility(View.GONE);
                     } else {
-                        Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        if (!MainActivity.isVisitor){
+                            Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        }
                         againInfoBtn.setVisibility(View.VISIBLE);
                     }
                 }, error -> {

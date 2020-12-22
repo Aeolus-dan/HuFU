@@ -32,6 +32,7 @@ import com.google.gson.Gson;
 import com.hufuinfo.hufudigitalgoldenchain.R;
 import com.hufuinfo.hufudigitalgoldenchain.activity.AboutActivity;
 import com.hufuinfo.hufudigitalgoldenchain.activity.CertificateActivity;
+import com.hufuinfo.hufudigitalgoldenchain.activity.MainActivity;
 import com.hufuinfo.hufudigitalgoldenchain.activity.TransactionInfoActivity;
 import com.hufuinfo.hufudigitalgoldenchain.apiinterface.QueryUserBalance;
 import com.hufuinfo.hufudigitalgoldenchain.apiinterface.QueryUserInfo;
@@ -241,7 +242,9 @@ public class PersonalCenterFragment extends Fragment {
                         mUserBalanceData = userBalanceResult.data;
                         showUserBalance();
                     } else {
-                        Toast.makeText(getActivity(), "查询账号状态结果失败!", Toast.LENGTH_LONG).show();
+                       if (!MainActivity.isVisitor){
+                           Toast.makeText(getActivity(), "查询账号状态结果失败!", Toast.LENGTH_LONG).show();
+                       }
                     }
                 }, error -> {
                     Toast.makeText(getActivity(), R.string.net_error + error.getMessage(), Toast.LENGTH_LONG).show();

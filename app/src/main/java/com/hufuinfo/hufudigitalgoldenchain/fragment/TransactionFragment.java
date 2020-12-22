@@ -1,5 +1,6 @@
 package com.hufuinfo.hufudigitalgoldenchain.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -38,6 +39,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.hufuinfo.hufudigitalgoldenchain.R;
+import com.hufuinfo.hufudigitalgoldenchain.activity.MainActivity;
 import com.hufuinfo.hufudigitalgoldenchain.activity.PaymentActivity;
 import com.hufuinfo.hufudigitalgoldenchain.activity.ScanPaymentActivity;
 import com.hufuinfo.hufudigitalgoldenchain.adapter.IndExpandableAdapter;
@@ -165,8 +167,15 @@ public class TransactionFragment extends Fragment {
 
     private IssueTradeOrderFragmentDialog issueTradeOrderFragmentDialog;
 
+    private boolean isVisitor = false;
+
     public TransactionFragment() {
 
+    }
+
+    @SuppressLint("ValidFragment")
+    public  TransactionFragment(boolean isVisitor){
+        this.isVisitor = isVisitor;
     }
 
     @Override
@@ -207,6 +216,9 @@ public class TransactionFragment extends Fragment {
         averageGoldPriceTv = view.findViewById(R.id.average_gold_price_tv);
         mTransactionTabLayout = view.findViewById(R.id.transaction_tab_layout);
         mTransactionViewPage = view.findViewById(R.id.transaction_container);
+        if (isVisitor){
+            view.findViewById(R.id.create_order_ibtn).setVisibility(View.GONE);
+        }
         mTranasactionPageAdapter = new TransactionPageAdapter(getChildFragmentManager());
         mTransactionViewPage.setAdapter(mTranasactionPageAdapter);
         mTransactionTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -506,7 +518,9 @@ public class TransactionFragment extends Fragment {
                         String code = mVirtualCpk.EncryptData(random, painText);
                         requestCreateOrderInfo(code);
                     } else {
-                        Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        if (!MainActivity.isVisitor) {
+                            Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        }
                         //关闭虚拟设备,然后重启虚拟cos
                         mVirtualCpk.closeVirtualCos();
                         mVirtualCpk = VirtualCpk.getInstance(mActivity);
@@ -579,7 +593,9 @@ public class TransactionFragment extends Fragment {
                         mUserBalanceData = userBalanceResult.data;
                         showUserBalance();
                     } else {
-                        Toast.makeText(getActivity(), "查询账号状态结果失败!", Toast.LENGTH_LONG).show();
+                        if (!MainActivity.isVisitor){
+                            Toast.makeText(getActivity(), "查询账号状态结果失败!", Toast.LENGTH_LONG).show();
+                        }
                     }
                 }, error -> {
                     Toast.makeText(getActivity(), R.string.net_error + error.getMessage(), Toast.LENGTH_LONG).show();
@@ -658,7 +674,9 @@ public class TransactionFragment extends Fragment {
                         showDivider = true;
                         showRecyclerView(queryAllCertsResult.data);
                     } else {
-                        Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        if (!MainActivity.isVisitor) {
+                            Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();
+                        }
                     }
                 }, error -> {
                     mTransSwipeRL.setRefreshing(false);
