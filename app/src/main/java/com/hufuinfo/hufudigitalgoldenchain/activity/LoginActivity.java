@@ -106,8 +106,8 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
         mRegisterBtn.setOnClickListener(this);
         mChangeLoginTypeTv = findViewById(R.id.change_login_type_button);
         mVisitorLogin = findViewById(R.id.visitor_login);
-        SpannableString spannableString = new SpannableString("忘记密码？动态登录");
-        spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorLoginText)), 5, 9, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        SpannableString spannableString = new SpannableString("动态登录");
+        spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorLoginText)), 0, 4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         mChangeLoginTypeTv.setText(spannableString);
         mChangeLoginTypeTv.setOnClickListener(this);
         mVisitorLogin.setOnClickListener(this);

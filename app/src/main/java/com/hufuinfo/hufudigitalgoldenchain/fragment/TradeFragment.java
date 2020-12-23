@@ -363,6 +363,9 @@ public class TradeFragment extends Fragment implements BaseQuickAdapter.RequestL
         }
         String keyId = CombinationSecretKey.getSecretKey("orderDetails.do");
         String hufuCode = mVirtualCpk.EncryptData(keyId.getBytes(), new Gson().toJson(orderDetails));
+        if (MainActivity.isVisitor) {
+            hufuCode = "";
+        }
         HuFuCode huFuCode = new HuFuCode(hufuCode);
         RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), new Gson().toJson(huFuCode));
 

@@ -155,7 +155,9 @@ public class CertificateActivity extends BaseDispatchTouchActivity {
                             CertificateActivity.this.finish();
                         }
                     } else {
-                        Toast.makeText(this, result.msg, Toast.LENGTH_SHORT).show();
+                        if(!MainActivity.isVisitor) {
+                            Toast.makeText(this, result.msg, Toast.LENGTH_SHORT).show();
+                        }
                         return;
                     }
 

@@ -392,6 +392,9 @@ public class PersonalTranInfoFragment extends Fragment {
         orderDetails.transactionType = transactionType;
         String keyId = CombinationSecretKey.getSecretKey("orderDetails.do");
         String hufuCode = mVirtualCpk.EncryptData(keyId.getBytes(), new Gson().toJson(orderDetails));
+        if (MainActivity.isVisitor) {
+            hufuCode = "";
+        }
         HuFuCode mHuFoCode = new HuFuCode(hufuCode);
         RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), new Gson().toJson(mHuFoCode));
 
@@ -402,8 +405,7 @@ public class PersonalTranInfoFragment extends Fragment {
                 .subscribe(queryAllCertsResult -> {
                     personalTrainSrl.setRefreshing(false);
                     if (queryAllCertsResult.success) {
-                        showRecyclerView(queryAllCertsResult.data);
-
+                          showRecyclerView(queryAllCertsResult.data);
                     } else {
                         if (!MainActivity.isVisitor) {
                             Toast.makeText(getActivity(), "查询结果失败", Toast.LENGTH_LONG).show();

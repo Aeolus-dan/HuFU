@@ -159,7 +159,9 @@ public class PerfectPersonalInfoActivity extends BaseDispatchTouchActivity imple
                             perfectView.setVisibility(View.VISIBLE);
                         }
                     } else {
-                        Toast.makeText(this, result.msg, Toast.LENGTH_SHORT).show();
+                       if(!MainActivity.isVisitor){
+                           Toast.makeText(this, result.msg, Toast.LENGTH_SHORT).show();
+                       }
                         return;
                     }
 

@@ -198,7 +198,11 @@ public class MainActivity extends BaseDispatchTouchActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            if (isVisitor){
+                return 2;
+            }else {
+                return 3;
+            }
         }
     }
 
@@ -337,7 +341,9 @@ public class MainActivity extends BaseDispatchTouchActivity {
                         isPartner = true;
                     } else {
                         isPartner = false;
-                        Toast.makeText(this, userBalanceResult.get("msg").getAsString(), Toast.LENGTH_LONG).show();
+                        if (!MainActivity.isVisitor) {
+                            Toast.makeText(this, userBalanceResult.get("msg").getAsString(), Toast.LENGTH_LONG).show();
+                        }
                     }
                 }, error -> {
                     Toast.makeText(this, R.string.net_error + error.getMessage(), Toast.LENGTH_LONG).show();

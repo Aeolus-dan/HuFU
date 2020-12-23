@@ -463,7 +463,9 @@ public class PersonalCenterFragment extends Fragment {
                 .subscribeOn(Schedulers.io())
                 .subscribe(result -> {
                     if (!(result.success)) {
-                        Toast.makeText(getActivity(), result.msg, Toast.LENGTH_SHORT).show();
+                        if(!MainActivity.isVisitor){
+                            Toast.makeText(getActivity(), result.msg, Toast.LENGTH_SHORT).show();
+                        }
                         return;
                     }
                     UserInfoListResult.UserInfo userInfo = result.data.getUserInfo();

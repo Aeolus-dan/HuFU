@@ -45,6 +45,10 @@ public class SettingFragment extends Fragment {
             getActivity().getSupportFragmentManager().beginTransaction().
                     replace(R.id.container_transaction, new PaymentPasswordFragment()).addToBackStack(null).commit();
         });
+        view.findViewById(R.id.find_login_password_tv).setOnClickListener(listener ->{ //找回密码
+            getActivity().getSupportFragmentManager().beginTransaction().
+                    replace(R.id.container_transaction, new FindPasswordFragment()).addToBackStack(null).commit();
+        });
         view.findViewById(R.id.setting_return_tv).setOnClickListener(listener -> {
             getActivity().onBackPressed();
         });

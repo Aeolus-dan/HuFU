@@ -86,6 +86,25 @@
         android:background="#ffededed" />
 
     <TextView
+        android:id="@+id/find_login_password_tv"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:drawableEnd="@mipmap/list_item_indicator"
+        android:drawableRight="@mipmap/list_item_indicator"
+        android:gravity="center_vertical"
+        android:text="找回登陆密码"
+        android:textColor="#ff4e5761"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        android:background="#ffededed" />
+
+    <TextView
         android:id="@+id/change_payment_pwd_tv"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -103,6 +122,7 @@
         android:layout_height="1dp"
 
         android:background="#ffededed" />
+
     <TextView
         android:id="@+id/update_app"
         android:layout_width="match_parent"

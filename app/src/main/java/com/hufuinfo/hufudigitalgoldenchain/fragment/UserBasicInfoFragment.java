@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.hufuinfo.hufudigitalgoldenchain.R;
+import com.hufuinfo.hufudigitalgoldenchain.activity.MainActivity;
 import com.hufuinfo.hufudigitalgoldenchain.apiinterface.QueryUserInfo;
 import com.hufuinfo.hufudigitalgoldenchain.bean.HuFuCode;
 import com.hufuinfo.hufudigitalgoldenchain.bean.PhoneNumber;
@@ -92,7 +93,9 @@ public class UserBasicInfoFragment extends Fragment {
                 .subscribeOn(Schedulers.io())
                 .subscribe(result -> {
                     if (!(result.success)) {
-                        Toast.makeText(getActivity(), result.msg, Toast.LENGTH_SHORT).show();
+                        if(!MainActivity.isVisitor){
+                            Toast.makeText(getActivity(), result.msg, Toast.LENGTH_SHORT).show();
+                        }
                         return;
                     }
                     UserInfoListResult.UserInfo userInfo = result.data.getUserInfo();
