@@ -22,7 +22,9 @@ import com.hufuinfo.hufudigitalgoldenchain.R;
 import com.hufuinfo.hufudigitalgoldenchain.activity.CertificateActivity;
 import com.hufuinfo.hufudigitalgoldenchain.apiinterface.QueryUserInfo;
 import com.hufuinfo.hufudigitalgoldenchain.bean.AccountPassword;
+import com.hufuinfo.hufudigitalgoldenchain.bean.FindAccountPassword;
 import com.hufuinfo.hufudigitalgoldenchain.bean.HuFuCode;
+import com.hufuinfo.hufudigitalgoldenchain.bean.UpdateAccountInfo;
 import com.hufuinfo.hufudigitalgoldenchain.utils.CombinationSecretKey;
 import com.hufuinfo.hufudigitalgoldenchain.utils.ConstantUtils;
 import com.hufuinfo.hufudigitalgoldenchain.utils.RetrofitUtils;
@@ -103,24 +105,24 @@ public class FindPasswordFragment extends Fragment {
 
     private void putChangeAccountPassowrd(String pin, String newPwd) {
         //TODO 1. AccountPassword 改变映射, 2.接口更改
-        AccountPassword mAccountPassword = new AccountPassword(pin, newPwd, mUserPhoneNumber);
-        String keyId = CombinationSecretKey.getSecretKey("verifyPassword.do");
-        String hufuCode = mVirtualCpk.EncryptData(keyId.getBytes(), new Gson().toJson(mAccountPassword));
-        HuFuCode mHuFoCode = new HuFuCode(hufuCode);
+        FindAccountPassword findAccountPassword = new FindAccountPassword(mUserPhoneNumber,newPwd,pin);
+       // String keyId = CombinationSecretKey.getSecretKey("seniorUserRegister.do");
+        //String hufuCode = mVirtualCpk.EncryptData(keyId.getBytes(), new Gson().toJson(mAccountPassword));
+        //HuFuCode mHuFoCode = new HuFuCode(hufuCode);
 
 
         QueryUserInfo mQueryUserInfo = RetrofitUtils.create(QueryUserInfo.class);
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8")
-                , new Gson().toJson(mHuFoCode));
+                , new Gson().toJson(findAccountPassword));
 
-        mQueryUserInfo.changeAccountPassword(antiFake, body)
+        mQueryUserInfo.findAccountPassword(antiFake, body)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(result -> {
                     if (!(result.success)) {
                         Toast.makeText(getActivity(), result.msg, Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(getActivity(), result.msg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "密码修改成功", Toast.LENGTH_SHORT).show();
 
                 }, error -> {
                     Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();

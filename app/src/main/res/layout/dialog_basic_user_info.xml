@@ -128,13 +128,14 @@
             android:textColor="#ff85898e"
             android:textSize="16sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/user_basic_cardid_tv"
             android:layout_width="163dp"
-            android:layout_height="22dp"
+            android:layout_height="23dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:gravity="end"
+            android:background="@null"
             android:textColor="#ff4e5761"
             android:textSize="16sp" />
     </LinearLayout>
@@ -160,13 +161,14 @@
             android:textColor="#ff85898e"
             android:textSize="16sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/user_basic_email_tv"
             android:layout_width="145dp"
             android:layout_height="22dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:gravity="end"
+            android:background="@null"
             android:textColor="#ff4e5761"
             android:textSize="16sp" />
     </LinearLayout>
@@ -192,13 +194,14 @@
             android:textColor="#ff85898e"
             android:textSize="16sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/user_bank_card_tv"
             android:layout_width="145dp"
             android:layout_height="22dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:gravity="end"
+            android:background="@null"
             android:textColor="#ff4e5761"
             android:textSize="16sp" />
     </LinearLayout>
@@ -207,5 +210,13 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#ffededed" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:text="确认修改"
+        android:id="@+id/confirm_commit_btn"
+        android:layout_marginTop="20dp"
+        />
 
 </LinearLayout>

@@ -249,7 +249,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                 .subscribe(result -> {
                     mProgressView.setVisibility(View.GONE);
                     if (!result.success) {
-                        Toast.makeText(getApplicationContext(), "请重新尝试登陆！", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),result.msg, Toast.LENGTH_LONG).show();
                         return;
                     }
                     String antiFake = result.data.antiFake;
@@ -305,7 +305,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                     mProgressView.setVisibility(View.GONE);
                     //success
                     if (!result.success) {
-                        Toast.makeText(getApplicationContext(), "请重新尝试登陆！", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), result.msg, Toast.LENGTH_LONG).show();
                         return;
                     }
                     String antiFake = result.data.antiFake.trim();

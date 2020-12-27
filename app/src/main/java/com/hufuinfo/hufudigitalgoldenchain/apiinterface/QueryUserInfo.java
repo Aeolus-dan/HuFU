@@ -35,6 +35,17 @@ public interface QueryUserInfo {
     @POST("business_demo/cmaservice/verifyPassword.do")
     Observable<RequestResult> changeAccountPassword(@Header("antiFake") String antiFake, @Body RequestBody info);
 
+    /**
+     * 找回密码（验证码校验）
+     *
+     * @param info
+     * @return
+     */
+    @Headers({"Content-Type:application/json", "Accept:application/json"})
+    @POST("business_demo/newservice/seniorUserRegister.do")
+    Observable<RequestResult> findAccountPassword(@Header("antiFake") String antiFake, @Body RequestBody info);
+
+
     @Headers({"Content-Type:application/json", "Accept:application/json"})
     @POST("business_demo/cmaservice/updatePin.do")
     Observable<RequestResult> changePaymentPassword(@Body RequestBody info);
