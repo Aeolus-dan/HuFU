@@ -120,7 +120,7 @@ public class UserBasicInfoFragment extends Fragment {
 
     /**
      * 提交信息修改
-     * @param phoneNumberString  phoneNumber
+     * @param phoneNumberString  手机号
      * @param cardIDString 身份证号码
      * @param bankIDString 银行卡号码
      */
