@@ -157,7 +157,8 @@
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="gone"
+        >
 
         <TextView
             android:layout_width="match_parent"
@@ -172,7 +173,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:hint="请输入证书PIN码"
             android:textSize="16sp" />
+
 
         <Button
             android:id="@+id/decrypt_cert_btn"

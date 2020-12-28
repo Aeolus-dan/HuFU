@@ -406,6 +406,7 @@
                 android:focusable="true"
                 android:gravity="center_vertical"
                 android:text="完善资料"
+                android:visibility="gone"
                 android:textColor="#ff4e5761"
                 android:textSize="16sp" />
 

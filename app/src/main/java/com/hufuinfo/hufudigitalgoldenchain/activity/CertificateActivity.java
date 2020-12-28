@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +36,8 @@ import com.hufuinfo.hufudigitalgoldenchain.utils.VirtualCpk;
 
 import org.apache.xerces.impl.dv.util.Base64;
 import org.w3c.dom.Text;
+
+import java.util.regex.Pattern;
 
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -78,6 +81,8 @@ public class CertificateActivity extends BaseDispatchTouchActivity {
         }
 
         timeCount = new TimeCount(60000, 1000);
+
+        Toast.makeText(this,"尊敬的用户, 每天只可下发3次证书, 请不要频繁获取证书",Toast.LENGTH_LONG).show();
     }
 
     private void initId() {
@@ -85,7 +90,7 @@ public class CertificateActivity extends BaseDispatchTouchActivity {
         verifCodeBtn.setOnClickListener(listener -> {
             phone = phoneEt.getText().toString();
             if (phone.length() > 0) {
-                RetrofitUtils.retriveCode(this, phone, mVirtualCpk);
+                RetrofitUtils.retriveCode(this, phone, mVirtualCpk); //获取验证码
                 timeCount.start();
             } else {
                 Toast.makeText(this, "请输入正确的手机号码", Toast.LENGTH_SHORT).show();
@@ -108,7 +113,7 @@ public class CertificateActivity extends BaseDispatchTouchActivity {
         decryptCertView = findViewById(R.id.ll_decrypt_cert);
         decryptCertBtn = findViewById(R.id.decrypt_cert_btn);
         decryptCertBtn.setOnClickListener(listener -> {
-            String pin = certPinEt.getText().toString();
+            String pin = certPinEt.getText().toString().trim();
             decryptCertBtn.setEnabled(false);
             loadingView.setVisibility(View.VISIBLE);
             decryptCert(pin, certStr, pkm);
@@ -230,7 +235,7 @@ public class CertificateActivity extends BaseDispatchTouchActivity {
                         }
                         showDecryptView();
                     } else {
-                        Toast.makeText(this, "在线得到证书失败！" + requestResult.msg, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "在线得到证书失败！" + requestResult.msg +",请再次尝试", Toast.LENGTH_SHORT).show();
                     }
                 }, error -> {
                     loadingView.setVisibility(View.GONE);
@@ -240,7 +245,7 @@ public class CertificateActivity extends BaseDispatchTouchActivity {
 
 
     private void decryptCert(String pin, String certStr, String pkm) {
-        if (pin.length() < 7) {
+        if (TextUtils.isEmpty(pin) || pin.length() < 7) {
             Toast.makeText(CertificateActivity.this, "请输入正确的PIN码", Toast.LENGTH_SHORT).show();
             loadingView.setVisibility(View.GONE);
             decryptCertBtn.setEnabled(true);
@@ -372,7 +377,7 @@ public class CertificateActivity extends BaseDispatchTouchActivity {
                     decryptCertBtn.setEnabled(true);
                     if (requestResult.success) {
 
-                        Toast.makeText(this, "获取证书成功！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "获取证书成功！请及时到设置里修改支付密码.默认支付密码为:12345678", Toast.LENGTH_SHORT).show();
                         if ("perfect".equals(prefectType)) {
                             Intent perfectIntent = new Intent(CertificateActivity.this, PerfectPersonalInfoActivity.class);
                             perfectIntent.putExtra("PERFECT_TYPE", "certificate");

@@ -217,6 +217,8 @@
         android:text="确认修改"
         android:id="@+id/confirm_commit_btn"
         android:layout_marginTop="20dp"
+        android:background="@color/text_blue"
+        android:textColor="@color/white"
         />
 
 </LinearLayout>

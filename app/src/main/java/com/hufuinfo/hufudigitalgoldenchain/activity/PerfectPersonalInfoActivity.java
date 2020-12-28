@@ -7,11 +7,13 @@ import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +39,8 @@ import com.hufuinfo.hufudigitalgoldenchain.utils.ValidatorUtils;
 import com.hufuinfo.hufudigitalgoldenchain.utils.VirtualCpk;
 
 import org.apache.xerces.impl.dv.util.Base64;
+
+import java.util.regex.Pattern;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -285,7 +289,7 @@ public class PerfectPersonalInfoActivity extends BaseDispatchTouchActivity imple
                         }
                         showDialogInputPin(certStr, pkm);
                     } else {
-                        Toast.makeText(this, "在线得到证书失败！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "在线得到证书失败！请再次尝试", Toast.LENGTH_SHORT).show();
                     }
                 }, error -> {
                     Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show();
@@ -295,14 +299,16 @@ public class PerfectPersonalInfoActivity extends BaseDispatchTouchActivity imple
 
     private void showDialogInputPin(String certStr, String pkm) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        final EditText editText = new EditText(this);
+
+        final EditText pinText = new EditText(this);
+
         builder.setTitle("输入证书PIN码")
-                .setView(editText)
+                .setView(pinText)
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String pin = editText.getText().toString();
-                        if (pin.length() < 4) {
+                        String pin = pinText.getText().toString();
+                        if (TextUtils.isEmpty(pin) || pin.length() < 7) {
                             Toast.makeText(PerfectPersonalInfoActivity.this, "请输入正确的PIN码", Toast.LENGTH_SHORT).show();
                             return;
                         }
@@ -360,9 +366,9 @@ public class PerfectPersonalInfoActivity extends BaseDispatchTouchActivity imple
                 .subscribeOn(Schedulers.io())
                 .subscribe(requestResult -> {
                     if (requestResult.success) {
-                        Toast.makeText(this, requestResult.msg, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "获取证书成功！请及时到设置里修改支付密码.默认支付密码为:12345678", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(this, requestResult.msg, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "获取证书是被,"+requestResult.msg, Toast.LENGTH_SHORT).show();
                     }
                 }, error -> {
                     Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show();

@@ -72,7 +72,15 @@ public class UserBasicInfoFragment extends Fragment {
 
     private void initView(View view) {
         accountTv = view.findViewById(R.id.user_basic_account_tv);
+        accountTv.setClickable(true);
+        accountTv.setOnClickListener(listener ->{
+            Toast.makeText(getActivity(),"账号名不可修改",Toast.LENGTH_LONG).show();
+        });
         realNameTv = view.findViewById(R.id.user_basic_name_tv);
+        realNameTv.setClickable(true);
+        realNameTv.setOnClickListener(listener ->{
+            Toast.makeText(getActivity(),"姓名不可修改",Toast.LENGTH_LONG).show();
+        });
         emailTv = view.findViewById(R.id.user_basic_email_tv);
         cardIDTv = view.findViewById(R.id.user_basic_cardid_tv);
         bankCardTv = view.findViewById(R.id.user_bank_card_tv);
@@ -235,6 +243,6 @@ public class UserBasicInfoFragment extends Fragment {
         emailTv.setText(mUserInfo.email);
         realNameTv.setText(mUserInfo.name);
         cardIDTv.setText(mUserInfo.idCard);
-        bankCardTv.setText(mUserInfo.bankCard);
+        bankCardTv.setText("************"+mUserInfo.bankCard);
     }
 }

@@ -9,6 +9,10 @@ android {
             keyAlias 'hufudigitalgoldechain'
         }
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
     compileSdkVersion 28
     def currentVersionCode = getVersionCode()
     def currentVersionName = getVersionName()
