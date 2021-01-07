@@ -7,6 +7,6 @@
     <dimen name="divider_trade_item">4dp</dimen>
     <dimen name="divider_all_record">8dp</dimen>
 
-    <dimen name="login_horizontal_margin">48dp</dimen>
+    <dimen name="login_horizontal_margin">22dp</dimen>
     <dimen name="logo_top_margin">72dp</dimen>
 </resources>

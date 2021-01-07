@@ -149,7 +149,8 @@ public class PersonalCenterFragment extends Fragment {
             RechargeFragmentDialog.getInstance().show(getFragmentManager(), "buyerDialog");
         });*/
         view.findViewById(R.id.withdraw_ll).setOnClickListener(listener -> {
-            PutForwardFragmentDialog.getInstance(mUserPhoneNumber, antiFake).show(getFragmentManager(), "putFowrdDialog");
+            //PutForwardFragmentDialog.getInstance(mUserPhoneNumber, antiFake).show(getFragmentManager(), "putFowrdDialog");
+            Toast.makeText(getActivity(), "敬请期待!", Toast.LENGTH_LONG).show();
         });
 
         view.findViewById(R.id.gold_change_ll).setOnClickListener(listener -> {
@@ -190,7 +191,8 @@ public class PersonalCenterFragment extends Fragment {
             againUserCert(mUserPhoneNumber);
         });
         view.findViewById(R.id.friendship_sharing_tv).setOnClickListener(listener -> {
-            String url = "http://www.gold2040.com";
+            String phoneNumber = mUserSharedPre.getString(ConstantUtils.USER_ACCOUNT, null);
+            String url = "http://www.gold2040.com/register.html?associatedId="+phoneNumber;
             showSharingRQDialog("友情分享", url);
         });
 

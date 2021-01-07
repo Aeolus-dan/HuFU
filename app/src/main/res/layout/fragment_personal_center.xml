@@ -199,13 +199,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <android.support.constraint.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:baselineAligned="false"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="@+id/gold_change_ll"
-                app:layout_constraintStart_toEndOf="@+id/gold_change_ll">
+                android:orientation="vertical">
 
                 <!-- <TextView
                      android:id="@+id/recharge_ll"
@@ -233,160 +231,152 @@
                      app:layout_constraintTop_toTopOf="parent" />-->
 
 
-                <TextView
-                    android:id="@+id/withdraw_ll"
-                    android:layout_width="64dp"
-                    android:layout_height="52dp"
-                    android:layout_marginTop="18dp"
-                    android:clickable="true"
-                    android:drawableTop="@mipmap/withdraw_icon"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:text="提现"
-                    android:textColor="#ff354052"
-                    android:textSize="12sp"
-                    app:layout_constraintEnd_toStartOf="@+id/gold_change_ll"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:id="@+id/withdraw_ll"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="52dp"
+                        android:clickable="true"
+                        android:drawableTop="@mipmap/withdraw_icon"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:text="提现"
+                        android:textColor="#ff354052"
+                        android:textSize="12sp" />
 
 
-                <TextView
-                    android:id="@+id/gold_change_ll"
-                    android:layout_width="64dp"
-                    android:layout_height="52dp"
-                    android:layout_alignStart="@id/withdraw_ll"
-                    android:layout_alignLeft="@id/withdraw_ll"
-                    android:clickable="true"
-                    android:drawableTop="@mipmap/gold_change_icon"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:text="转金本币"
-                    android:textColor="#ff354052"
-                    android:textSize="12sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/withdraw_ll"
-                    app:layout_constraintEnd_toStartOf="@+id/my_team_ll"
-                    app:layout_constraintStart_toEndOf="@+id/withdraw_ll" />
+                    <TextView
+                        android:id="@+id/gold_change_ll"
+                        android:layout_width="64dp"
+                        android:layout_height="52dp"
+                        android:layout_alignStart="@id/withdraw_ll"
+                        android:layout_alignLeft="@id/withdraw_ll"
+                        android:clickable="true"
+                        android:drawableTop="@mipmap/gold_change_icon"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:text="转金本币"
+                        android:visibility="gone"
+                        android:textColor="#ff354052"
+                        android:textSize="12sp" />
 
 
-                <TextView
-                    android:id="@+id/my_team_ll"
-                    android:layout_width="64dp"
-                    android:layout_height="52dp"
-                    android:layout_alignStart="@id/gold_change_ll"
-                    android:layout_alignLeft="@id/gold_change_ll"
-                    android:clickable="true"
-                    android:drawableTop="@mipmap/my_team_icon"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:text="我的团队"
-                    android:textColor="#ff354052"
-                    android:textSize="12sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/gold_change_ll"
-                    app:layout_constraintEnd_toStartOf="@+id/recharge_record_ll"
-                    app:layout_constraintStart_toEndOf="@+id/gold_change_ll" />
+                    <TextView
+                        android:id="@+id/my_team_ll"
+                        android:layout_width="64dp"
+                        android:layout_height="52dp"
+                        android:layout_alignStart="@id/gold_change_ll"
+                        android:layout_alignLeft="@id/gold_change_ll"
+                        android:clickable="true"
+                        android:drawableTop="@mipmap/my_team_icon"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:text="我的团队"
+                        android:visibility="gone"
+                        android:textColor="#ff354052"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/total_bill_ll"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="52dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:drawableTop="@mipmap/total_bill_icon"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:text="总账单"
+                        android:textColor="#ff354052"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/recharge_record_ll"
-                    android:layout_width="64dp"
-                    android:layout_height="52dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="center"
-                    android:clickable="true"
-                    android:drawableTop="@mipmap/recharge_record"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:text="充值记录"
-                    android:textColor="#ff354052"
-                    android:textSize="12sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/my_team_ll"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/my_team_ll" />
+                    <TextView
+                        android:id="@+id/recharge_record_ll"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="52dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:drawableTop="@mipmap/recharge_record"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:text="充值记录"
+                        android:textColor="#ff354052"
+                        android:textSize="12sp" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/personal_order_ll"
-                    android:layout_width="64dp"
-                    android:layout_height="52dp"
-                    android:layout_below="@id/withdraw_ll"
-                    android:layout_alignStart="@id/recharge_record_ll"
-                    android:layout_alignLeft="@id/recharge_record_ll"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="24dp"
-                    android:clickable="true"
-                    android:drawableTop="@mipmap/person_order_icon"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:text="私人订单"
-                    android:textColor="#ff354052"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="@+id/withdraw_ll"
-                    app:layout_constraintTop_toBottomOf="@+id/withdraw_ll" />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="80dp"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:id="@+id/personal_order_ll"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="52dp"
+                       android:clickable="true"
+                       android:layout_gravity="center"
+                       android:drawableTop="@mipmap/person_order_icon"
+                       android:focusable="true"
+                       android:gravity="center"
+                       android:orientation="vertical"
+                       android:text="私人订单"
+                       android:textColor="#ff354052"
+                       android:textSize="12sp" />
 
 
-                <TextView
-                    android:id="@+id/platform_order_ll"
-                    android:layout_width="64dp"
-                    android:layout_height="52dp"
-                    android:layout_below="@id/gold_change_ll"
-                    android:layout_alignStart="@id/personal_order_ll"
-                    android:layout_alignLeft="@id/personal_order_ll"
-                    android:layout_gravity="center"
-                    android:clickable="true"
-                    android:drawableTop="@mipmap/platform_order_icon"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:text="平台订单"
-                    android:textColor="#ff354052"
-                    android:textSize="13sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/personal_order_ll"
-                    app:layout_constraintStart_toStartOf="@+id/gold_change_ll" />
+                   <TextView
+                       android:id="@+id/platform_order_ll"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="52dp"
+                       android:layout_gravity="center"
+                       android:clickable="true"
+                       android:drawableTop="@mipmap/platform_order_icon"
+                       android:focusable="true"
+                       android:gravity="center"
+                       android:orientation="vertical"
+                       android:text="平台订单"
+                       android:textColor="#ff354052"
+                       android:textSize="13sp" />
 
-                <TextView
-                    android:id="@+id/total_bill_ll"
-                    android:layout_width="64dp"
-                    android:layout_height="52dp"
-                    android:layout_below="@id/my_team_ll"
-                    android:layout_alignEnd="@id/platform_order_ll"
-                    android:layout_alignRight="@id/platform_order_ll"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="center"
-                    android:clickable="true"
-                    android:drawableTop="@mipmap/total_bill_icon"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:text="总账单"
-                    android:textColor="#ff354052"
-                    android:textSize="12sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/platform_order_ll"
-                    app:layout_constraintStart_toStartOf="@+id/my_team_ll" />
 
-                <TextView
-                    android:id="@+id/receiver_tv"
-                    android:layout_width="64dp"
-                    android:layout_height="52dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="center"
-                    android:clickable="true"
-                    android:drawableTop="@mipmap/receiver_icon"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:text="收款码"
-                    android:textColor="#ff354052"
-                    android:textSize="12sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/total_bill_ll"
-                    app:layout_constraintStart_toStartOf="@+id/recharge_record_ll" />
-            </android.support.constraint.ConstraintLayout>
+
+                   <TextView
+                       android:id="@+id/receiver_tv"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="52dp"
+                       android:layout_alignParentBottom="true"
+                       android:layout_gravity="center"
+                       android:clickable="true"
+                       android:drawableTop="@mipmap/receiver_icon"
+                       android:focusable="true"
+                       android:gravity="center"
+                       android:orientation="vertical"
+                       android:text="收款码"
+                       android:textColor="#ff354052"
+                       android:textSize="12sp" />
+               </LinearLayout>
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
+                android:visibility="gone"
                 android:background="#ffededed" />
 
             <TextView
@@ -413,6 +403,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginTop="18dp"
                 android:background="#ffededed" />
 
             <TextView
@@ -482,12 +473,14 @@
                 android:focusable="true"
                 android:gravity="center_vertical"
                 android:text="关于"
+                android:visibility="gone"
                 android:textColor="#ff4e5761"
                 android:textSize="16sp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:visibility="gone"
                 android:background="#ffededed" />
 
             <TextView

@@ -40,13 +40,13 @@
             <android.support.design.widget.TabItem
                 android:layout_width="48dp"
                 android:layout_height="wrap_content"
-                android:text="买入"
+                android:text="我想买"
                 android:textSize="17sp" />
 
             <android.support.design.widget.TabItem
                 android:layout_width="48dp"
                 android:layout_height="wrap_content"
-                android:text="卖出"
+                android:text="我想卖"
                 android:textSize="17sp" />
         </android.support.design.widget.TabLayout>
     </FrameLayout>
