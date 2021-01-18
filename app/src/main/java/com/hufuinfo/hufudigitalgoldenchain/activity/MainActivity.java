@@ -584,4 +584,9 @@ public class MainActivity extends BaseDispatchTouchActivity {
         mVirtualCpk.closeVirtualCos();
         mVirtualCpk = VirtualCpk.getInstance(this);
     }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
+    }
 }
